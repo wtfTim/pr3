@@ -560,6 +560,51 @@
             margin-bottom: 5px;
         }
 
+        /* Leaderboard Section */
+        .leaderboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: rgba(42, 42, 42, 0.7);
+            border-radius: 10px;
+            border: 1px solid var(--gray);
+        }
+
+        .leaderboard-rank {
+            font-weight: 700;
+            font-size: 1.2rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .leaderboard-name {
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .leaderboard-score {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .leaderboard-item:nth-child(1) .leaderboard-rank {
+            color: gold;
+        }
+
+        .leaderboard-item:nth-child(2) .leaderboard-rank {
+            color: silver;
+        }
+
+        .leaderboard-item:nth-child(3) .leaderboard-rank {
+            color: #cd7f32;
+        }
+
         /* Story Section */
         .story-content {
             line-height: 1.6;
@@ -580,6 +625,89 @@
         .chapter-text {
             margin-bottom: 15px;
             color: #ddd;
+        }
+
+        /* Character Section */
+        .character-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(42, 42, 42, 0.7);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid var(--gray);
+        }
+
+        .character-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .character-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .character-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .stat-name {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .skill-level {
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         /* Sidebar */
@@ -817,6 +945,159 @@
             line-height: 1.6;
         }
 
+        /* Race Mini-game */
+        .race-game {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .race-track {
+            height: 150px;
+            background: linear-gradient(to bottom, #333, #555);
+            border-radius: 10px;
+            position: relative;
+            margin: 30px 0;
+            overflow: hidden;
+            border: 2px solid #777;
+        }
+
+        .player-car {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            transition: left 0.1s;
+        }
+
+        .opponent-car {
+            position: absolute;
+            bottom: 20px;
+            left: 30%;
+            font-size: 2.5rem;
+            color: var(--danger);
+            transition: left 0.1s;
+        }
+
+        .race-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .control-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--darker);
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .race-timer {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .race-status {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        /* Car Details Modal */
+        .car-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .car-detail-image {
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(45deg, #444, #666);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .car-detail-info {
+            width: 100%;
+            text-align: left;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .detail-label {
+            color: #aaa;
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Profile Modal */
+        .profile-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-input {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--gray);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Custom Car Modal */
+        .custom-car-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .game-content {
@@ -912,6 +1193,8 @@
                 <li class="nav-tab" data-tab="races"><i class="fas fa-flag-checkered"></i> Гонки</li>
                 <li class="nav-tab" data-tab="staff"><i class="fas fa-users"></i> Персонал</li>
                 <li class="nav-tab" data-tab="missions"><i class="fas fa-tasks"></i> Миссии</li>
+                <li class="nav-tab" data-tab="character"><i class="fas fa-user"></i> Персонаж</li>
+                <li class="nav-tab" data-tab="leaderboard"><i class="fas fa-trophy"></i> Лидеры</li>
                 <li class="nav-tab" data-tab="story"><i class="fas fa-book"></i> История</li>
             </ul>
         </nav>
@@ -967,6 +1250,23 @@
                             <span>Нанять</span>
                         </div>
                     </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title"><i class="fas fa-save"></i> Сохранение</h3>
+                    <button class="btn btn-primary" id="save-btn" style="width: 100%; margin-bottom: 10px;">
+                        <i class="fas fa-save"></i> Сохранить игру
+                    </button>
+                    <button class="btn btn-secondary" id="load-btn" style="width: 100%;">
+                        <i class="fas fa-download"></i> Загрузить игру
+                    </button>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3 class="sidebar-title"><i class="fas fa-user"></i> Профиль</h3>
+                    <button class="btn btn-primary" id="profile-btn" style="width: 100%;">
+                        <i class="fas fa-user-edit"></i> Изменить профиль
+                    </button>
                 </div>
 
                 <div class="sidebar-card">
@@ -1029,6 +1329,97 @@
         </div>
     </div>
 
+    <!-- Модальное окно для мини-игры гонки -->
+    <div class="modal" id="race-game-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-race-game-modal">&times;</span>
+            <h2 class="modal-title">Гоночная трасса</h2>
+            <div class="race-game">
+                <div class="race-track" id="race-track">
+                    <div class="player-car" id="player-car">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="opponent-car" id="opponent-car">
+                        <i class="fas fa-car"></i>
+                    </div>
+                </div>
+                <div class="race-timer" id="race-timer">3</div>
+                <div class="race-status" id="race-status">Готовы?</div>
+                <div class="race-controls">
+                    <button class="control-btn" id="left-btn">←</button>
+                    <button class="control-btn" id="right-btn">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для деталей автомобиля -->
+    <div class="modal" id="car-details-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-car-details-modal">&times;</span>
+            <h2 class="modal-title">Детали автомобиля</h2>
+            <div class="car-details" id="car-details-content">
+                <!-- Детали будут добавлены сюда -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для профиля -->
+    <div class="modal" id="profile-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-profile-modal">&times;</span>
+            <h2 class="modal-title">Профиль</h2>
+            <div class="profile-form">
+                <div class="form-group">
+                    <label class="form-label">Имя персонажа</label>
+                    <input type="text" class="form-input" id="character-name" placeholder="Введите имя">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="cancel-profile">Отмена</button>
+                    <button class="btn btn-primary" id="save-profile">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для создания уникального автомобиля -->
+    <div class="modal" id="custom-car-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-custom-car-modal">&times;</span>
+            <h2 class="modal-title">Создать уникальный автомобиль</h2>
+            <div class="custom-car-form">
+                <div class="form-group">
+                    <label class="form-label">Название автомобиля</label>
+                    <input type="text" class="form-input" id="custom-car-name" placeholder="Введите название">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Цена</label>
+                    <input type="number" class="form-input" id="custom-car-price" placeholder="Введите цену"
+                        value="50000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Скорость (1-100)</label>
+                    <input type="range" class="form-input" id="custom-car-speed" min="1" max="100" value="80">
+                    <span id="speed-value">80</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Управляемость (1-100)</label>
+                    <input type="range" class="form-input" id="custom-car-handling" min="1" max="100" value="75">
+                    <span id="handling-value">75</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Разгон (1-100)</label>
+                    <input type="range" class="form-input" id="custom-car-acceleration" min="1" max="100" value="85">
+                    <span id="acceleration-value">85</span>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="cancel-custom-car">Отмена</button>
+                    <button class="btn btn-primary" id="create-custom-car">Создать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Уведомления -->
     <div class="notifications" id="notifications">
         <!-- Notifications will be added here by JavaScript -->
@@ -1043,13 +1434,53 @@
             xpToNext: 1000,
             reputation: 78,
             cars: [
-                { id: 1, name: "Toyota Camry", price: 25000, image: "fas fa-car-side", condition: 95, type: "economy" },
-                { id: 2, name: "Honda Civic", price: 22000, image: "fas fa-car", condition: 85, type: "economy" },
-                { id: 3, name: "Ford Mustang", price: 35000, image: "fas fa-car-crash", condition: 90, type: "sports" }
+                {
+                    id: 1,
+                    name: "Toyota Camry",
+                    price: 25000,
+                    image: "fas fa-car-side",
+                    condition: 95,
+                    type: "economy",
+                    custom: false,
+                    speed: 70,
+                    handling: 65,
+                    acceleration: 60
+                },
+                {
+                    id: 2,
+                    name: "Honda Civic",
+                    price: 22000,
+                    image: "fas fa-car",
+                    condition: 85,
+                    type: "economy",
+                    custom: false,
+                    speed: 75,
+                    handling: 70,
+                    acceleration: 65
+                },
+                {
+                    id: 3,
+                    name: "Ford Mustang",
+                    price: 35000,
+                    image: "fas fa-car-crash",
+                    condition: 90,
+                    type: "sports",
+                    custom: false,
+                    speed: 90,
+                    handling: 80,
+                    acceleration: 85
+                }
             ],
             maxCars: 10,
             staff: [
-                { id: 1, name: "Механик Иван", level: 3, salary: 500, efficiency: 80 }
+                {
+                    id: 1,
+                    name: "Механик Иван",
+                    level: 3,
+                    salary: 500,
+                    efficiency: 80,
+                    type: "mechanic"
+                }
             ],
             upgrades: [
                 { id: 1, name: "Улучшенный гараж", desc: "Увеличивает вместимость на 5 машин", cost: 15000, icon: "fas fa-warehouse", purchased: false },
@@ -1069,21 +1500,24 @@
                 { id: 1, name: "Первые шаги", desc: "Купите свой первый автомобиль", reward: 1000, progress: 0, target: 1, type: "buy_car" },
                 { id: 2, name: "Ремонтник", desc: "Почините 5 автомобилей", reward: 2000, progress: 0, target: 5, type: "repair_car" },
                 { id: 3, name: "Гонщик", desc: "Выиграйте 3 гонки", reward: 5000, progress: 0, target: 3, type: "win_race" },
-                { id: 4, name: "Бизнесмен", desc: "Заработайте $50,000", reward: 10000, progress: 12500, target: 50000, type: "earn_money" }
+                { id: 4, name: "Бизнесмен", desc: "Заработайте $50,000", reward: 10000, progress: 12500, target: 50000, type: "earn_money" },
+                { id: 5, name: "Коллекционер", desc: "Соберите коллекцию из 10 автомобилей", reward: 15000, progress: 3, target: 10, type: "collect_cars" },
+                { id: 6, name: "Эксперт", desc: "Достигните 15 уровня", reward: 25000, progress: 5, target: 15, type: "reach_level" },
+                { id: 7, name: "Миллионер", desc: "Заработайте $1,000,000", reward: 50000, progress: 12500, target: 1000000, type: "earn_money" }
             ],
             carShop: [
-                { id: 4, name: "Nissan Skyline", price: 30000, image: "fas fa-car", condition: 100, type: "sports" },
-                { id: 5, name: "BMW M3", price: 45000, image: "fas fa-car-side", condition: 100, type: "sports" },
-                { id: 6, name: "Audi R8", price: 85000, image: "fas fa-car-crash", condition: 100, type: "sports" },
-                { id: 7, name: "Ford F-150", price: 35000, image: "fas fa-truck-pickup", condition: 100, type: "truck" },
-                { id: 8, name: "Mercedes-Benz S-Class", price: 95000, image: "fas fa-car", condition: 100, type: "luxury" },
-                { id: 9, name: "Porsche 911", price: 120000, image: "fas fa-car-side", condition: 100, type: "sports" },
-                { id: 10, name: "Tesla Model S", price: 80000, image: "fas fa-car-battery", condition: 100, type: "electric" },
-                { id: 11, name: "Lamborghini Huracan", price: 250000, image: "fas fa-car-crash", condition: 100, type: "sports" },
-                { id: 12, name: "Ferrari 488", price: 300000, image: "fas fa-car-side", condition: 100, type: "sports" },
-                { id: 13, name: "Rolls-Royce Phantom", price: 450000, image: "fas fa-car", condition: 100, type: "luxury" },
-                { id: 14, name: "Bugatti Chiron", price: 3000000, image: "fas fa-car-crash", condition: 100, type: "sports" },
-                { id: 15, name: "McLaren 720S", price: 350000, image: "fas fa-car-side", condition: 100, type: "sports" }
+                { id: 4, name: "Nissan Skyline", price: 30000, image: "fas fa-car", condition: 100, type: "sports", speed: 85, handling: 80, acceleration: 82 },
+                { id: 5, name: "BMW M3", price: 45000, image: "fas fa-car-side", condition: 100, type: "sports", speed: 90, handling: 85, acceleration: 88 },
+                { id: 6, name: "Audi R8", price: 85000, image: "fas fa-car-crash", condition: 100, type: "sports", speed: 95, handling: 90, acceleration: 92 },
+                { id: 7, name: "Ford F-150", price: 35000, image: "fas fa-truck-pickup", condition: 100, type: "truck", speed: 75, handling: 65, acceleration: 60 },
+                { id: 8, name: "Mercedes-Benz S-Class", price: 95000, image: "fas fa-car", condition: 100, type: "luxury", speed: 88, handling: 82, acceleration: 80 },
+                { id: 9, name: "Porsche 911", price: 120000, image: "fas fa-car-side", condition: 100, type: "sports", speed: 97, handling: 95, acceleration: 96 },
+                { id: 10, name: "Tesla Model S", price: 80000, image: "fas fa-car-battery", condition: 100, type: "electric", speed: 90, handling: 85, acceleration: 95 },
+                { id: 11, name: "Lamborghini Huracan", price: 250000, image: "fas fa-car-crash", condition: 100, type: "sports", speed: 98, handling: 96, acceleration: 98 },
+                { id: 12, name: "Ferrari 488", price: 300000, image: "fas fa-car-side", condition: 100, type: "sports", speed: 99, handling: 97, acceleration: 99 },
+                { id: 13, name: "Rolls-Royce Phantom", price: 450000, image: "fas fa-car", condition: 100, type: "luxury", speed: 85, handling: 80, acceleration: 75 },
+                { id: 14, name: "Bugatti Chiron", price: 3000000, image: "fas fa-car-crash", condition: 100, type: "sports", speed: 100, handling: 99, acceleration: 100 },
+                { id: 15, name: "McLaren 720S", price: 350000, image: "fas fa-car-side", condition: 100, type: "sports", speed: 99, handling: 98, acceleration: 99 }
             ],
             profitMultiplier: 1,
             reputationMultiplier: 1,
@@ -1112,7 +1546,33 @@
             completedMissions: 0,
             raceWins: 0,
             carsRepaired: 0,
-            totalEarnings: 12500
+            totalEarnings: 12500,
+            character: {
+                name: "Алекс",
+                level: 1,
+                xp: 0,
+                xpToNext: 100,
+                skills: {
+                    mechanics: 1,
+                    sales: 1,
+                    racing: 1,
+                    leadership: 1
+                }
+            },
+            leaderboard: [
+                { name: "Максим", score: 1500000 },
+                { name: "Анна", score: 1200000 },
+                { name: "Дмитрий", score: 950000 },
+                { name: "Елена", score: 800000 },
+                { name: "Сергей", score: 650000 },
+                { name: "Ольга", score: 500000 },
+                { name: "Андрей", score: 400000 },
+                { name: "Татьяна", score: 300000 },
+                { name: "Игорь", score: 200000 },
+                { name: "Наталья", score: 100000 }
+            ],
+            day: 1,
+            customCar: null
         };
 
         // ==================== DOM Элементы ====================
@@ -1129,11 +1589,53 @@
 
         // ==================== Инициализация игры ====================
         function initGame() {
+            loadGame();
             renderGarage();
             updateStats();
             setupEventListeners();
             setupModals();
             checkMissions();
+            startDayTimer();
+        }
+
+        // ==================== Сохранение игры ====================
+        function saveGame() {
+            localStorage.setItem('autoEmpireSave', JSON.stringify(gameData));
+            showNotification('Игра сохранена!', 'success');
+
+            // Обновляем лидерборд
+            updateLeaderboard();
+        }
+
+        // ==================== Загрузка игры ====================
+        function loadGame() {
+            const saveData = localStorage.getItem('autoEmpireSave');
+            if (saveData) {
+                const parsedData = JSON.parse(saveData);
+                Object.assign(gameData, parsedData);
+                showNotification('Игра загружена!', 'success');
+            } else {
+                showNotification('Сохранение не найдено. Начата новая игра.', 'info');
+            }
+        }
+
+        // ==================== Таймер дней ====================
+        function startDayTimer() {
+            setInterval(() => {
+                gameData.day++;
+                showNotification(`Начался день ${gameData.day}!`, 'info');
+
+                // Случайные события
+                if (Math.random() > 0.7) {
+                    const events = [
+                        "Сегодня в вашем автосалоне скидки 10%!",
+                        "Появился новый клиент с редким автомобилем!",
+                        "На рынке появился новый автомобиль!"
+                    ];
+                    const event = events[Math.floor(Math.random() * events.length)];
+                    showNotification(event, 'info');
+                }
+            }, 60000); // Каждую минуту (в реальной игре было бы 24 часа)
         }
 
         // ==================== Рендеринг гаража ====================
@@ -1168,9 +1670,14 @@
                             </div>
                         </div>
                         <div class="car-actions">
-                            <button class="btn btn-primary" onclick="sellCar(${car.id})">
-                                <i class="fas fa-dollar-sign"></i> Продать
+                            <button class="btn btn-primary" onclick="showCarDetails(${car.id})">
+                                <i class="fas fa-info-circle"></i> Детали
                             </button>
+                            ${car.custom ? '' : `
+                                <button class="btn btn-danger" onclick="sellCar(${car.id})">
+                                    <i class="fas fa-dollar-sign"></i> Продать
+                                </button>
+                            `}
                             <button class="btn btn-secondary" onclick="upgradeCar(${car.id})">
                                 <i class="fas fa-wrench"></i> Улучшить
                             </button>
@@ -1179,6 +1686,25 @@
                 `;
                 garageContent.appendChild(carCard);
             });
+
+            // Добавляем кнопку для создания уникального автомобиля
+            const addCarButton = document.createElement('div');
+            addCarButton.className = 'car-card';
+            addCarButton.style.background = 'rgba(255,255,255,0.05)';
+            addCarButton.style.border = '1px dashed #555';
+            addCarButton.innerHTML = `
+                <div class="car-image" style="background: linear-gradient(45deg, #222, #444);">
+                    <i class="fas fa-plus" style="font-size: 3rem; color: var(--primary);"></i>
+                </div>
+                <div class="car-info">
+                    <div class="car-name">Создать уникальный автомобиль</div>
+                    <div class="car-price">Стоимость: $10,000</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openCustomCarModal()">
+                        <i class="fas fa-car"></i> Создать
+                    </button>
+                </div>
+            `;
+            garageContent.appendChild(addCarButton);
         }
 
         // ==================== Обновление статистики ====================
@@ -1217,6 +1743,13 @@
             const carIndex = gameData.cars.findIndex(car => car.id === carId);
             if (carIndex !== -1) {
                 const car = gameData.cars[carIndex];
+
+                // Нельзя продать пользовательскую машину
+                if (car.custom) {
+                    showNotification('Вы не можете продать свою личную машину!', 'warning');
+                    return;
+                }
+
                 const sellPrice = Math.floor(car.price * 0.7 * (car.condition / 100));
                 gameData.cash += sellPrice;
                 gameData.cars.splice(carIndex, 1);
@@ -1228,6 +1761,9 @@
                 updateMissionProgress('sell_car');
                 gameData.totalEarnings += sellPrice;
                 checkMissions();
+
+                // Прокачка персонажа
+                gainCharacterXP(10);
             }
         }
 
@@ -1257,6 +1793,10 @@
             updateMissionProgress('repair_car');
             gameData.carsRepaired++;
             checkMissions();
+
+            // Прокачка персонажа
+            gainCharacterXP(15);
+            gameData.character.skills.mechanics++;
         }
 
         // ==================== Работа ====================
@@ -1291,6 +1831,10 @@
             updateStats();
             checkMissions();
             showNotification(`Вы заработали $${earnings} за работу (+${xpGain} XP)`, 'success');
+
+            // Прокачка персонажа
+            gainCharacterXP(20);
+            gameData.character.skills.mechanics++;
         }
 
         // ==================== Повышение уровня ====================
@@ -1315,6 +1859,13 @@
             } else if (gameData.level === 10) {
                 showNotification('Открыта новая трасса: Гран-при!', 'info');
             }
+
+            // Обновляем миссии
+            updateMissionProgress('reach_level');
+            checkMissions();
+
+            // Прокачка персонажа
+            gainCharacterXP(50);
         }
 
         // ==================== Открытие модального окна гонок ====================
@@ -1377,9 +1928,115 @@
             // Закрываем модальное окно выбора трассы
             document.getElementById('race-modal').style.display = 'none';
 
-            // Рассчитываем шанс победы (зависит от уровня и репутации)
-            const winChance = Math.min(95, 40 + (gameData.level * 3) + (gameData.reputation * 0.3));
-            const isWin = Math.random() * 100 < winChance;
+            // Открываем мини-игру гонки
+            openRaceGame(race);
+        }
+
+        // ==================== Открытие мини-игры гонки ====================
+        function openRaceGame(race) {
+            const raceGameModal = document.getElementById('race-game-modal');
+            const raceTimer = document.getElementById('race-timer');
+            const raceStatus = document.getElementById('race-status');
+            const playerCar = document.getElementById('player-car');
+            const opponentCar = document.getElementById('opponent-car');
+
+            // Сбрасываем позиции
+            playerCar.style.left = '50%';
+            opponentCar.style.left = '30%';
+
+            // Сбрасываем таймер
+            let timeLeft = 3;
+            raceTimer.textContent = timeLeft;
+            raceStatus.textContent = 'Готовы?';
+
+            // Таймер до начала гонки
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                raceTimer.textContent = timeLeft;
+
+                if (timeLeft === 0) {
+                    clearInterval(timerInterval);
+                    raceTimer.textContent = 'Гонка!';
+                    raceStatus.textContent = 'Гонка началась!';
+                    startRaceGame(race);
+                }
+            }, 1000);
+
+            raceGameModal.style.display = 'flex';
+        }
+
+        // ==================== Мини-игра гонки ====================
+        function startRaceGame(race) {
+            const playerCar = document.getElementById('player-car');
+            const opponentCar = document.getElementById('opponent-car');
+            const raceStatus = document.getElementById('race-status');
+
+            let playerPosition = 50;
+            let opponentPosition = 30;
+            let playerSpeed = 0;
+            let opponentSpeed = 2 + Math.random() * 3; // Случайная скорость противника
+
+            // Обработчики клавиш
+            function handleKeyDown(e) {
+                if (e.key === 'ArrowLeft') {
+                    playerSpeed = -3;
+                } else if (e.key === 'ArrowRight') {
+                    playerSpeed = 3;
+                }
+            }
+
+            function handleKeyUp(e) {
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    playerSpeed = 0;
+                }
+            }
+
+            // Обработчики кнопок
+            document.getElementById('left-btn').addEventListener('mousedown', () => playerSpeed = -3);
+            document.getElementById('left-btn').addEventListener('mouseup', () => playerSpeed = 0);
+            document.getElementById('left-btn').addEventListener('touchstart', () => playerSpeed = -3);
+            document.getElementById('left-btn').addEventListener('touchend', () => playerSpeed = 0);
+
+            document.getElementById('right-btn').addEventListener('mousedown', () => playerSpeed = 3);
+            document.getElementById('right-btn').addEventListener('mouseup', () => playerSpeed = 0);
+            document.getElementById('right-btn').addEventListener('touchstart', () => playerSpeed = 3);
+            document.getElementById('right-btn').addEventListener('touchend', () => playerSpeed = 0);
+
+            document.addEventListener('keydown', handleKeyDown);
+            document.addEventListener('keyup', handleKeyUp);
+
+            // Игровой цикл
+            const gameInterval = setInterval(() => {
+                // Обновляем позицию игрока
+                playerPosition += playerSpeed;
+                if (playerPosition < 10) playerPosition = 10;
+                if (playerPosition > 90) playerPosition = 90;
+                playerCar.style.left = `${playerPosition}%`;
+
+                // Обновляем позицию противника
+                opponentPosition += opponentSpeed;
+                if (opponentPosition > 90) opponentPosition = 90;
+                opponentCar.style.left = `${opponentPosition}%`;
+
+                // Проверяем победу
+                if (playerPosition >= 85 && opponentPosition < 85) {
+                    clearInterval(gameInterval);
+                    document.removeEventListener('keydown', handleKeyDown);
+                    document.removeEventListener('keyup', handleKeyUp);
+                    finishRace(race, true);
+                } else if (opponentPosition >= 85 && playerPosition < 85) {
+                    clearInterval(gameInterval);
+                    document.removeEventListener('keydown', handleKeyDown);
+                    document.removeEventListener('keyup', handleKeyUp);
+                    finishRace(race, false);
+                }
+            }, 50);
+        }
+
+        // ==================== Завершение гонки ====================
+        function finishRace(race, isWin) {
+            const raceGameModal = document.getElementById('race-game-modal');
+            raceGameModal.style.display = 'none';
 
             // Рассчитываем награду
             let reward = isWin ? race.reward : Math.floor(race.reward * 0.2);
@@ -1399,6 +2056,9 @@
 
                 // Обновляем миссии
                 updateMissionProgress('win_race');
+
+                // Прокачка персонажа
+                gameData.character.skills.racing += 2;
             } else {
                 gameData.reputation = Math.max(0, gameData.reputation - 1);
             }
@@ -1412,6 +2072,9 @@
             updateStats();
             renderGarage();
             checkMissions();
+
+            // Прокачка персонажа
+            gainCharacterXP(isWin ? 30 : 15);
         }
 
         // ==================== Показ результата гонки ====================
@@ -1460,7 +2123,8 @@
                 name: `Механик ${name}`,
                 level: 1,
                 salary: 300,
-                efficiency: 50 + Math.floor(Math.random() * 30)
+                efficiency: 50 + Math.floor(Math.random() * 30),
+                type: "mechanic"
             };
 
             gameData.staff.push(newStaff);
@@ -1471,6 +2135,10 @@
             if (document.querySelector('.nav-tab.active').getAttribute('data-tab') === 'staff') {
                 loadTabContent('staff');
             }
+
+            // Прокачка персонажа
+            gainCharacterXP(25);
+            gameData.character.skills.leadership++;
         }
 
         // ==================== Увольнение персонала ====================
@@ -1517,7 +2185,12 @@
 
             // Обновляем миссии
             updateMissionProgress('buy_car');
+            updateMissionProgress('collect_cars');
             checkMissions();
+
+            // Прокачка персонажа
+            gainCharacterXP(20);
+            gameData.character.skills.sales++;
         }
 
         // ==================== Покупка улучшения ====================
@@ -1568,6 +2241,9 @@
             if (document.querySelector('.nav-tab.active').getAttribute('data-tab') === 'upgrades') {
                 loadTabContent('upgrades');
             }
+
+            // Прокачка персонажа
+            gainCharacterXP(40);
         }
 
         // ==================== Обновление прогресса миссий ====================
@@ -1584,6 +2260,15 @@
             let newCompleted = 0;
 
             gameData.missions.forEach(mission => {
+                // Обновляем прогресс для специфических типов
+                if (mission.type === 'collect_cars') {
+                    mission.progress = gameData.cars.length;
+                } else if (mission.type === 'reach_level') {
+                    mission.progress = gameData.level;
+                } else if (mission.type === 'earn_money') {
+                    mission.progress = gameData.totalEarnings;
+                }
+
                 if (mission.progress >= mission.target && mission.reward > 0) {
                     // Миссия выполнена
                     gameData.cash += mission.reward;
@@ -1601,6 +2286,19 @@
                 if (document.querySelector('.nav-tab.active').getAttribute('data-tab') === 'missions') {
                     loadTabContent('missions');
                 }
+            }
+        }
+
+        // ==================== Прокачка персонажа ====================
+        function gainCharacterXP(amount) {
+            gameData.character.xp += amount;
+
+            if (gameData.character.xp >= gameData.character.xpToNext) {
+                gameData.character.level++;
+                gameData.character.xp -= gameData.character.xpToNext;
+                gameData.character.xpToNext = Math.floor(gameData.character.xpToNext * 1.5);
+
+                showNotification(`Ваш персонаж достиг уровня ${gameData.character.level}!`, 'success');
             }
         }
 
@@ -1629,11 +2327,205 @@
             document.getElementById('story-modal').style.display = 'none';
         }
 
+        // ==================== Показ деталей автомобиля ====================
+        function showCarDetails(carId) {
+            const car = gameData.cars.find(c => c.id === carId);
+            if (!car) return;
+
+            const carDetailsModal = document.getElementById('car-details-modal');
+            const carDetailsContent = document.getElementById('car-details-content');
+
+            carDetailsContent.innerHTML = `
+                <div class="car-detail-image">
+                    <i class="${car.image}"></i>
+                </div>
+                <div class="car-detail-info">
+                    <div class="detail-row">
+                        <span class="detail-label">Название:</span>
+                        <span class="detail-value">${car.name}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Цена:</span>
+                        <span class="detail-value">$${car.price.toLocaleString()}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Состояние:</span>
+                        <span class="detail-value">${car.condition}%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Тип:</span>
+                        <span class="detail-value">${car.type}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Скорость:</span>
+                        <span class="detail-value">${car.speed || 'N/A'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Управляемость:</span>
+                        <span class="detail-value">${car.handling || 'N/A'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Разгон:</span>
+                        <span class="detail-value">${car.acceleration || 'N/A'}</span>
+                    </div>
+                </div>
+            `;
+
+            carDetailsModal.style.display = 'flex';
+        }
+
+        // ==================== Закрытие модального окна деталей автомобиля ====================
+        function closeCarDetailsModal() {
+            document.getElementById('car-details-modal').style.display = 'none';
+        }
+
+        // ==================== Открытие модального окна профиля ====================
+        function openProfileModal() {
+            const profileModal = document.getElementById('profile-modal');
+            const characterNameInput = document.getElementById('character-name');
+
+            characterNameInput.value = gameData.character.name;
+            profileModal.style.display = 'flex';
+        }
+
+        // ==================== Закрытие модального окна профиля ====================
+        function closeProfileModal() {
+            document.getElementById('profile-modal').style.display = 'none';
+        }
+
+        // ==================== Сохранение профиля ====================
+        function saveProfile() {
+            const characterNameInput = document.getElementById('character-name');
+            const newName = characterNameInput.value.trim();
+
+            if (newName && newName !== gameData.character.name) {
+                gameData.character.name = newName;
+                showNotification('Имя персонажа изменено!', 'success');
+            }
+
+            closeProfileModal();
+        }
+
+        // ==================== Открытие модального окна создания уникального автомобиля ====================
+        function openCustomCarModal() {
+            const customCarModal = document.getElementById('custom-car-modal');
+
+            // Проверяем, есть ли уже уникальный автомобиль
+            const hasCustomCar = gameData.cars.some(car => car.custom);
+            if (hasCustomCar) {
+                showNotification('У вас уже есть уникальный автомобиль!', 'warning');
+                return;
+            }
+
+            // Проверяем, достаточно ли денег
+            if (gameData.cash < 10000) {
+                showNotification('Недостаточно денег для создания уникального автомобиля!', 'danger');
+                return;
+            }
+
+            // Устанавливаем начальные значения
+            document.getElementById('custom-car-name').value = '';
+            document.getElementById('custom-car-price').value = '50000';
+            document.getElementById('custom-car-speed').value = '80';
+            document.getElementById('custom-car-handling').value = '75';
+            document.getElementById('custom-car-acceleration').value = '85';
+
+            updateCustomCarSliders();
+            customCarModal.style.display = 'flex';
+        }
+
+        // ==================== Обновление слайдеров уникального автомобиля ====================
+        function updateCustomCarSliders() {
+            document.getElementById('speed-value').textContent = document.getElementById('custom-car-speed').value;
+            document.getElementById('handling-value').textContent = document.getElementById('custom-car-handling').value;
+            document.getElementById('acceleration-value').textContent = document.getElementById('custom-car-acceleration').value;
+        }
+
+        // ==================== Закрытие модального окна создания уникального автомобиля ====================
+        function closeCustomCarModal() {
+            document.getElementById('custom-car-modal').style.display = 'none';
+        }
+
+        // ==================== Создание уникального автомобиля ====================
+        function createCustomCar() {
+            const name = document.getElementById('custom-car-name').value.trim();
+            const price = parseInt(document.getElementById('custom-car-price').value);
+            const speed = parseInt(document.getElementById('custom-car-speed').value);
+            const handling = parseInt(document.getElementById('custom-car-handling').value);
+            const acceleration = parseInt(document.getElementById('custom-car-acceleration').value);
+
+            if (!name) {
+                showNotification('Введите название автомобиля!', 'warning');
+                return;
+            }
+
+            if (price < 10000 || price > 1000000) {
+                showNotification('Цена должна быть от $10,000 до $1,000,000!', 'warning');
+                return;
+            }
+
+            if (gameData.cash < price) {
+                showNotification('Недостаточно денег для создания автомобиля!', 'danger');
+                return;
+            }
+
+            gameData.cash -= price;
+
+            const newCar = {
+                id: Date.now(),
+                name: name,
+                price: price,
+                image: "fas fa-car",
+                condition: 100,
+                type: "custom",
+                custom: true,
+                speed: speed,
+                handling: handling,
+                acceleration: acceleration
+            };
+
+            gameData.cars.push(newCar);
+            renderGarage();
+            updateStats();
+            showNotification(`Вы создали уникальный автомобиль "${name}"!`, 'success');
+
+            closeCustomCarModal();
+        }
+
+        // ==================== Обновление лидерборда ====================
+        function updateLeaderboard() {
+            // В реальной игре здесь был бы запрос к серверу
+            // Для демонстрации просто добавим текущего игрока если он лучший
+
+            const currentPlayer = {
+                name: gameData.character.name,
+                score: gameData.totalEarnings
+            };
+
+            // Добавляем текущего игрока если он лучший
+            if (gameData.totalEarnings > gameData.leaderboard[0].score) {
+                gameData.leaderboard.unshift(currentPlayer);
+                gameData.leaderboard.pop(); // Удаляем последнего
+                showNotification('Поздравляем! Вы вошли в топ-10 лидеров!', 'success');
+            }
+
+            // Сортируем лидерборд по убыванию
+            gameData.leaderboard.sort((a, b) => b.score - a.score);
+
+            // Обновляем отображение лидерборда
+            if (document.querySelector('.nav-tab.active').getAttribute('data-tab') === 'leaderboard') {
+                loadTabContent('leaderboard');
+            }
+        }
+
         // ==================== Настройка событий ====================
         function setupEventListeners() {
             document.getElementById('work-btn').addEventListener('click', work);
             document.getElementById('race-btn').addEventListener('click', openRaceModal);
             document.getElementById('hire-btn').addEventListener('click', hireStaff);
+            document.getElementById('save-btn').addEventListener('click', saveGame);
+            document.getElementById('load-btn').addEventListener('click', loadGame);
+            document.getElementById('profile-btn').addEventListener('click', openProfileModal);
 
             // Закрытие модальных окон
             document.getElementById('close-race-modal').addEventListener('click', closeRaceModal);
@@ -1641,12 +2533,31 @@
             document.getElementById('close-race-result').addEventListener('click', closeRaceResultModal);
             document.getElementById('close-story-modal').addEventListener('click', closeStoryModal);
             document.getElementById('close-story').addEventListener('click', closeStoryModal);
+            document.getElementById('close-race-game-modal').addEventListener('click', () => {
+                document.getElementById('race-game-modal').style.display = 'none';
+            });
+            document.getElementById('close-car-details-modal').addEventListener('click', closeCarDetailsModal);
+            document.getElementById('close-profile-modal').addEventListener('click', closeProfileModal);
+            document.getElementById('cancel-profile').addEventListener('click', closeProfileModal);
+            document.getElementById('save-profile').addEventListener('click', saveProfile);
+            document.getElementById('close-custom-car-modal').addEventListener('click', closeCustomCarModal);
+            document.getElementById('cancel-custom-car').addEventListener('click', closeCustomCarModal);
+            document.getElementById('create-custom-car').addEventListener('click', createCustomCar);
+
+            // Слайдеры для уникального автомобиля
+            document.getElementById('custom-car-speed').addEventListener('input', updateCustomCarSliders);
+            document.getElementById('custom-car-handling').addEventListener('input', updateCustomCarSliders);
+            document.getElementById('custom-car-acceleration').addEventListener('input', updateCustomCarSliders);
 
             // Закрытие модальных окон при клике вне содержимого
             window.addEventListener('click', (e) => {
                 const raceModal = document.getElementById('race-modal');
                 const raceResultModal = document.getElementById('race-result-modal');
                 const storyModal = document.getElementById('story-modal');
+                const raceGameModal = document.getElementById('race-game-modal');
+                const carDetailsModal = document.getElementById('car-details-modal');
+                const profileModal = document.getElementById('profile-modal');
+                const customCarModal = document.getElementById('custom-car-modal');
 
                 if (e.target === raceModal) {
                     closeRaceModal();
@@ -1658,6 +2569,22 @@
 
                 if (e.target === storyModal) {
                     closeStoryModal();
+                }
+
+                if (e.target === raceGameModal) {
+                    raceGameModal.style.display = 'none';
+                }
+
+                if (e.target === carDetailsModal) {
+                    closeCarDetailsModal();
+                }
+
+                if (e.target === profileModal) {
+                    closeProfileModal();
+                }
+
+                if (e.target === customCarModal) {
+                    closeCustomCarModal();
                 }
             });
 
@@ -1708,9 +2635,14 @@
                                             </div>
                                         </div>
                                         <div class="car-actions">
-                                            <button class="btn btn-primary" onclick="sellCar(${car.id})">
-                                                <i class="fas fa-dollar-sign"></i> Продать
+                                            <button class="btn btn-primary" onclick="showCarDetails(${car.id})">
+                                                <i class="fas fa-info-circle"></i> Детали
                                             </button>
+                                            ${car.custom ? '' : `
+                                                <button class="btn btn-danger" onclick="sellCar(${car.id})">
+                                                    <i class="fas fa-dollar-sign"></i> Продать
+                                                </button>
+                                            `}
                                             <button class="btn btn-secondary" onclick="upgradeCar(${car.id})">
                                                 <i class="fas fa-wrench"></i> Улучшить
                                             </button>
@@ -1883,6 +2815,62 @@
                     `;
                     break;
 
+                case 'character':
+                    mainPanel.innerHTML = `
+                        <h2 class="panel-title"><i class="fas fa-user"></i> Ваш персонаж</h2>
+                        <div class="character-card">
+                            <div class="character-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="character-name">${gameData.character.name}</div>
+                            <div class="character-level">Уровень: ${gameData.character.level}</div>
+                            <div class="character-stats">
+                                <div class="stat-item">
+                                    <div class="stat-name">Опыт</div>
+                                    <div class="stat-value">${gameData.character.xp}/${gameData.character.xpToNext}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-name">Деньги</div>
+                                    <div class="stat-value">$${gameData.cash.toLocaleString()}</div>
+                                </div>
+                            </div>
+                            <div class="skills-grid">
+                                <div class="skill-card">
+                                    <div class="skill-name">Механика</div>
+                                    <div class="skill-level">${gameData.character.skills.mechanics}</div>
+                                </div>
+                                <div class="skill-card">
+                                    <div class="skill-name">Продажи</div>
+                                    <div class="skill-level">${gameData.character.skills.sales}</div>
+                                </div>
+                                <div class="skill-card">
+                                    <div class="skill-name">Гонки</div>
+                                    <div class="skill-level">${gameData.character.skills.racing}</div>
+                                </div>
+                                <div class="skill-card">
+                                    <div class="skill-name">Лидерство</div>
+                                    <div class="skill-level">${gameData.character.skills.leadership}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+
+                case 'leaderboard':
+                    mainPanel.innerHTML = `
+                        <h2 class="panel-title"><i class="fas fa-trophy"></i> Таблица лидеров</h2>
+                        <div class="leaderboard-list">
+                            ${gameData.leaderboard.map((player, index) => `
+                                <div class="leaderboard-item">
+                                    <div class="leaderboard-rank">#${index + 1}</div>
+                                    <div class="leaderboard-name">${player.name}</div>
+                                    <div class="leaderboard-score">$${player.score.toLocaleString()}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    break;
+
                 case 'story':
                     mainPanel.innerHTML = `
                         <h2 class="panel-title"><i class="fas fa-book"></i> История</h2>
@@ -1915,6 +2903,14 @@
         window.fireStaff = fireStaff;
         window.openStoryModal = openStoryModal;
         window.closeStoryModal = closeStoryModal;
+        window.showCarDetails = showCarDetails;
+        window.closeCarDetailsModal = closeCarDetailsModal;
+        window.openProfileModal = openProfileModal;
+        window.closeProfileModal = closeProfileModal;
+        window.saveProfile = saveProfile;
+        window.openCustomCarModal = openCustomCarModal;
+        window.closeCustomCarModal = closeCustomCarModal;
+        window.createCustomCar = createCustomCar;
     </script>
 </body>
 
